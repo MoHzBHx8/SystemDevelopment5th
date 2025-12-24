@@ -148,7 +148,7 @@ The project follows Python best practices:
 ## Coverage
 
 <!-- COVERAGE-START -->
-Coverage: _pending_
+Coverage: **100%**
 <!-- COVERAGE-END -->
 
 
