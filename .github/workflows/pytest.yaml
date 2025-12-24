@@ -48,26 +48,26 @@ jobs:
             | grep -E "(TOTAL|Name)" | tail -n 2 >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
 
-      - name: Update README with coverage
-        if: matrix.python-version == '3.9'
-        run: |
-          COVERAGE=$(pytest tests/ --cov=src --cov-report=term \
-            | grep TOTAL | awk '{print $4}')
-
-          sed -i.bak "/<!-- COVERAGE-START -->/,/<!-- COVERAGE-END -->/c\
-          <!-- COVERAGE-START -->\n\
-          Coverage: **${COVERAGE}**\n\
-          <!-- COVERAGE-END -->" README.md
-
-          rm README.md.bak
-
-      - name: Commit coverage to README
-        if: matrix.python-version == '3.9'
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git add README.md
-          git diff --cached --quiet || git commit -m "Update coverage in README"
-          git push
+#      - name: Update README with coverage
+#        if: matrix.python-version == '3.9'
+#        run: |
+#          COVERAGE=$(pytest tests/ --cov=src --cov-report=term \
+#            | grep TOTAL | awk '{print $4}')
+#
+#          sed -i.bak "/<!-- COVERAGE-START -->/,/<!-- COVERAGE-END -->/c\
+#          <!-- COVERAGE-START -->\n\
+#          Coverage: **${COVERAGE}**\n\
+#          <!-- COVERAGE-END -->" README.md
+#
+#          rm README.md.bak
+#
+#      - name: Commit coverage to README
+#        if: matrix.python-version == '3.9'
+#        run: |
+#          git config user.name "github-actions"
+#          git config user.email "github-actions@github.com"
+#
+#          git add README.md
+#          git diff --cached --quiet || git commit -m "Update coverage in README"
+#          git push
 
