@@ -19,7 +19,7 @@ class TestAddition:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.add(a, b)
+            _ = calc.add(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -30,7 +30,7 @@ class TestAddition:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.add(a, b)
+            _ = calc.add(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -171,7 +171,7 @@ class TestSubtraction:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.subtract(a, b)
+            _ = calc.subtract(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -182,7 +182,7 @@ class TestSubtraction:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.subtract(a, b)
+            _ = calc.subtract(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -212,7 +212,7 @@ class TestMultiplication:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.multiply(a, b)
+            _ = calc.multiply(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -223,7 +223,7 @@ class TestMultiplication:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.multiply(a, b)
+            _ = calc.multiply(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -253,7 +253,7 @@ class TestDivision:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.divide(a, b)
+            _ = calc.divide(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -264,7 +264,7 @@ class TestDivision:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.divide(a, b)
+            _ = calc.divide(a, b)
 
         assert 'outside the valid range' in str(exc_info.value)
 
@@ -287,10 +287,9 @@ class TestDivision:
         calc = Calculator()
         a = 6.0
         b = 0
-        expected = 4.0
 
         with pytest.raises(ValueError) as exc_info:
-            result = calc.divide(a, b)
+            _ = calc.divide(a, b)
 
         assert 'Cannot divide by zero' == str(exc_info.value)
 
@@ -303,4 +302,4 @@ class TestInput:
 
         # Act
         with pytest.raises(InvalidInputException) as exc_info:
-            result = calc.divide(a, b)
+            _ = calc.divide(a, b)
