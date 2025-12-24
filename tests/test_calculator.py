@@ -5,9 +5,11 @@ Test suite for the Calculator class.
 import pytest
 from calculator.calculator import Calculator, InvalidInputException
 
+
 @pytest.fixture
 def memo():
-    return print('this is a memo')
+    return print("this is a memo")
+
 
 class TestAddition:
     """Tests for the add method."""
@@ -21,7 +23,7 @@ class TestAddition:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.add(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_input_b(self):
         calc = Calculator()
@@ -32,7 +34,7 @@ class TestAddition:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.add(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_add_positive_numbers(self, memo):
         """Test adding two positive numbers."""
@@ -173,7 +175,7 @@ class TestSubtraction:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.subtract(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_input_b(self):
         calc = Calculator()
@@ -184,7 +186,7 @@ class TestSubtraction:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.subtract(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_subtract_positive_numbers(self):
         """Test subtracting positive numbers."""
@@ -214,7 +216,7 @@ class TestMultiplication:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.multiply(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_input_b(self):
         calc = Calculator()
@@ -225,7 +227,7 @@ class TestMultiplication:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.multiply(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_multiply_positive_numbers(self):
         """Test multiplying positive numbers."""
@@ -255,7 +257,7 @@ class TestDivision:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.divide(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_input_b(self):
         calc = Calculator()
@@ -266,7 +268,7 @@ class TestDivision:
         with pytest.raises(InvalidInputException) as exc_info:
             _ = calc.divide(a, b)
 
-        assert 'outside the valid range' in str(exc_info.value)
+        assert "outside the valid range" in str(exc_info.value)
 
     def test_divide_positive_numbers(self):
         """Test dividing positive numbers."""
@@ -291,7 +293,7 @@ class TestDivision:
         with pytest.raises(ValueError) as exc_info:
             _ = calc.divide(a, b)
 
-        assert 'Cannot divide by zero' == str(exc_info.value)
+        assert "Cannot divide by zero" == str(exc_info.value)
 
 
 class TestInput:
