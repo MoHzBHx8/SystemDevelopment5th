@@ -301,5 +301,5 @@ class TestInput:
         b = 1.0
 
         # Act
-        with pytest.raises(InvalidInputException) as exc_info:
+        with pytest.raises(InvalidInputException) as _:
             _ = calc.divide(a, b)
