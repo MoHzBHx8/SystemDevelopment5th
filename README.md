@@ -145,6 +145,13 @@ The project follows Python best practices:
 - pytest 9.0+
 - pytest-cov 7.0+
 
+## Coverage
+
+<!-- COVERAGE-START -->
+Coverage: _pending_
+<!-- COVERAGE-END -->
+
+
 ## License
 
 This project is for educational purposes.
